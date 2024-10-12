@@ -1,14 +1,10 @@
-function player(name, hp, mp, items) {
-  return {
-    name,
-    hp,
-    mp,
-    items,
-  };
-} // create a function that return individual object
+class player {}
 
-const kratos = player("Kratos", 90, 1, ["Blade"]);
-const zeus = player("Zeus", 100, 70, ["Rope"]);
-
+const kratos = new player(); // correct way to differentiate with normal object and says this an an specific player object
 console.log(kratos);
-console.log(zeus);
+console.log({}); // this is a normal object we can't say this is a player object its just a simple normal object
+
+// other examples
+// 1. is car class -> is a specific objects of all cars
+// on the other hand when we create a simple object for cars we can't tag that object as a car and there is also a problem of shallow and depp copy
+// and also same work with function that returns a obj
