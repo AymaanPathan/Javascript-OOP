@@ -1,24 +1,24 @@
-class Student {
-  constructor(name, major, grades) {
+class Player {
+  constructor(name, hp, mp, items) {
     this.name = name;
-    this.major = major;
-    this.grades = grades;
-  }
-
-  addGrade(grade) {
-    this.grades.push(grade);
-  }
-  gpa() {
-    let gpa = 0;
-    for (let i = 0; i < this.grades.length; i++) {
-      gpa += this.grades[i];
-    }
-    return gpa / this.grades.length;
+    this.hp = hp;
+    this.mp = mp;
+    this.items = items;
+    console.log("This Player is " + this);
   }
 }
 
-const Eva = new Student("Eva", "Arts", [95, 75, 83]);
-Eva.addGrade(90);
-Eva.addGrade(12);
-console.log(Eva);
-console.log(Eva.gpa());
+class Warrior extends Player {
+  constructor(name, hp, mp, items, shield) {
+    super(name, hp, mp, items);
+    this.shield = shield;
+    console.log("This Warrior is " + this);
+  }
+}
+
+const Aymaan = new Player("Aymaan", 90, 12, ["cap"]);
+
+const Kratos = new Warrior("Kratos", 90, 89, ["blade"], "Wood Shield");
+console.log(Kratos);
+
+// console.log(Aymaan);
