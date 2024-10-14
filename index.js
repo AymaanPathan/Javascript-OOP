@@ -1,24 +1,19 @@
-class Player {
-  constructor(name, hp, mp, items) {
-    this.name = name;
-    this.hp = hp;
-    this.mp = mp;
-    this.items = items;
-    console.log("This Player is " + this);
-  }
+function Person(name, balance) {
+  this.name = name;
+  this.id = Date.now();
+  this.balance = balance;
 }
 
-class Warrior extends Player {
-  constructor(name, hp, mp, items, shield) {
-    super(name, hp, mp, items);
-    this.shield = shield;
-    console.log("This Warrior is " + this);
-  }
-}
+const Aymaan = new Person("Aymaan", 1000);
 
-const Aymaan = new Player("Aymaan", 90, 12, ["cap"]);
+Person.prototype.Deposit = function (amount) {
+  this.balance += amount;
+};
 
-const Kratos = new Warrior("Kratos", 90, 89, ["blade"], "Wood Shield");
-console.log(Kratos);
+Person.prototype.withDraw = function (amount) {
+  this.balance -= amount;
+};
 
-// console.log(Aymaan);
+Aymaan.withDraw(500);
+
+console.log(Aymaan);
